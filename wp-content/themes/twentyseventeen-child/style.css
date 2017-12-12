@@ -12,6 +12,9 @@ article.employee div.about-employee img {
 article.employee div.about-employee p {
     margin: 0;
 }
+article.employee div.about-employee ul {
+    margin-top: 20px;
+}
 article.employee div.about-employee ul li a.moretag {
     display: table;
     margin-top: 15px;

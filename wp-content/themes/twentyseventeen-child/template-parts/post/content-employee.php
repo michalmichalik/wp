@@ -65,14 +65,16 @@
         <p><?php echo get_field('email') ?></p>
         <p><?php echo get_field('www') ?></p>
 
-        <?php print_r(get_field('related_posts')); $related_posts = get_field('related_posts') ?>
+        <?php if(get_field('social_label_1')) : ?><a href="<?php echo get_field('social_link_1'); ?>"><?php echo get_field('social_label_1'); ?></a><?php endif ?>
+        <?php if(get_field('social_label_2')) : ?><a href="<?php echo get_field('social_link_2'); ?>"><?php echo get_field('social_label_2'); ?></a><?php endif ?>
+        <?php if(get_field('social_label_3')) : ?><a href="<?php echo get_field('social_link_3'); ?>"><?php echo get_field('social_label_3'); ?></a><?php endif ?>
+
+        <?php $related_posts = get_field('related_posts') ?>
 
         <ul>
             <?php
                 foreach($related_posts as $related_post) :
                     $rpost = get_post($related_post);
-
-                    print_r($rpost);
             ?>
             <li>
                 <?php
