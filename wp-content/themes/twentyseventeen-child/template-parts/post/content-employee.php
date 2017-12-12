@@ -92,7 +92,7 @@
                         }
                     ?>
                 </p>
-                <a class="moretag" href="<?php echo get_permalink($rpost->ID) ?>">Read the full article...</a>
+                <a class="moretag" href="<?php echo get_permalink($rpost->ID) ?>">Read more...</a>
             </li>
             <?php endforeach ?>
         </ul>
