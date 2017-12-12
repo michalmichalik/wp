@@ -2,3 +2,28 @@
  Theme Name:   Twenty Seventeen Child
  Template:     twentyseventeen
 */
+
+article#post-contact {
+    display: flex;
+    flex-direction: column;
+}
+article#post-contact header,
+article#post-contact div.entry-content {
+    width: 100% !important;
+}
+article#post-contact div.entry-content div.company-address {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 50px;
+}
+article#post-contact div.entry-content div.company-address div.logo-address img {
+    margin-bottom: 20px;
+}
+article#post-contact div.entry-content div.company-address div.logo-address p {
+    margin: 0
+}
+article#post-contact div.entry-content div.company-address div.map #map {
+    width: 400px;
+    height: 300px;
+}
