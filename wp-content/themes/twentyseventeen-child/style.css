@@ -27,3 +27,23 @@ article#post-contact div.entry-content div.company-address div.map #map {
     width: 400px;
     height: 300px;
 }
+
+article.employee div.about-employee {
+    display: flex;
+    flex-direction: column;
+}
+article.employee div.about-employee img {
+    margin-bottom: 30px;
+}
+article.employee div.about-employee p {
+    margin: 0;
+}
+article.employee div.about-employee ul {
+    margin-top: 20px;
+}
+article.employee div.about-employee ul li a.moretag {
+    display: table;
+    margin-top: 15px;
+    font-style: italic;
+    text-decoration: underline;
+}
