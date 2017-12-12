@@ -1,4 +1,14 @@
 /*
- Theme Name:   Twenty Seventeen Child
- Template:     twentyseventeen
+    Theme Name:   Twenty Seventeen Child
+    Template:     twentyseventeen
 */
+article.employee div.about-employee {
+    display: flex;
+    flex-direction: column;
+}
+article.employee div.about-employee img {
+    margin-bottom: 30px;
+}
+article.employee div.about-employee p {
+    margin: 0;
+}
