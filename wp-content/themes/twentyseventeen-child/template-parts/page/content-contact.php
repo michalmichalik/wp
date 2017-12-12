@@ -59,5 +59,28 @@
 				<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCiIaw6RcUWU40PdLtW5brxm8CHwXKvSxY&callback=initMap" async defer></script>
 			</div>
 		</div>
+
+		<div class="company-employees">
+			<p>Loading employee list...</p>
+		</div>
+
+		<script>
+			function getEmployees() {
+				var data = { 'action': 'load', 'post_type': 'employee' }
+
+				jQuery.ajax({
+					url : '<?php echo admin_url('admin-ajax.php'); ?>',
+					data : data,
+					type : 'POST',
+					success: function( data ){
+						jQuery('.company-employees').html(data);
+					}
+				});
+			}
+
+			jQuery(document).ready(function() {
+				setTimeout(getEmployees, 1000);
+			});
+		</script>
 	</div><!-- .entry-content -->
 </article><!-- #post-## -->

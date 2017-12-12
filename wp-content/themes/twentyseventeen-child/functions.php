@@ -21,6 +21,31 @@
     }
     add_action( 'init', 'create_posttype' );
 
+    /* Load employee list via ajax */
+    function employees_ajax_handler(){
+        $query = new WP_Query( array('post_type' => $_POST['post_type']) );
+
+        while ($query->have_posts()) {
+            $query->the_post();
+
+            $image = get_field('image');
+            $size = 'thumbnail';
+
+            echo '<div class="employee">';
+                if($image) {
+                    echo wp_get_attachment_image( $image, $size );
+                }
+
+                echo "<br>";
+                echo get_field('name');
+            echo '</div>';
+        }
+
+    	die;
+    }
+    add_action('wp_ajax_load', 'employees_ajax_handler');
+    add_action('wp_ajax_nopriv_load', 'employees_ajax_handler');
+
     /* Register ACF field */
     if(function_exists("register_field_group"))
     {
