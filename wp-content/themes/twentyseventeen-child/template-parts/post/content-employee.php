@@ -64,6 +64,36 @@
         <p><?php echo get_field('name') ?></p>
         <p><?php echo get_field('email') ?></p>
         <p><?php echo get_field('www') ?></p>
+
+        <?php print_r(get_field('related_posts')); $related_posts = get_field('related_posts') ?>
+
+        <ul>
+            <?php
+                foreach($related_posts as $related_post) :
+                    $rpost = get_post($related_post);
+
+                    print_r($rpost);
+            ?>
+            <li>
+                <?php
+                    if(get_the_post_thumbnail($rpost->ID)) {
+                        echo get_the_post_thumbnail($rpost->ID);
+                    }
+                ?>
+                <h2><?= $rpost->post_title ?></h2>
+                <p>
+                    <?php
+                        if(empty($rpost->post_excerpt)) {
+                            echo wp_trim_words($rpost->post_content, 10);
+                        } else {
+                            echo $rpost->post_excerpt;
+                        }
+                    ?>
+                </p>
+                <a class="moretag" href="<?php echo get_permalink($rpost->ID) ?>">Read the full article...</a>
+            </li>
+            <?php endforeach ?>
+        </ul>
     </div>
 
 	<?php
